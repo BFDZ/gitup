@@ -2,8 +2,8 @@ package config
 
 import (
 	"errors"
-	"fmt"
 	"gopkg.in/yaml.v2"
+	"log"
 	"os"
 )
 
@@ -15,10 +15,12 @@ type Repo struct {
 }
 
 var Repos []Repo
+var ListenAddr string
 
 func init() {
 	conf := struct {
-		Repo []Repo `yaml:"repo"`
+		Repo       []Repo `yaml:"repo"`
+		ListenAddr string `yaml:"listen"`
 	}{}
 	if f, err := os.Open("./config.yml"); err != nil {
 		panic(errors.New("can't find config.yml"))
@@ -29,7 +31,8 @@ func init() {
 		}
 	}
 
-	fmt.Println("config loaded")
+	log.Println("config loaded")
 
 	Repos = conf.Repo
+	ListenAddr = conf.ListenAddr
 }

@@ -1,10 +1,11 @@
+listen: 0.0.0.0:8000
 repo:
   - dir: C:\Users\zhshc\Desktop\gitup-test
     branch: origin/master
     mode: ontime
     time: "0 0 */1 * *"
 
-  - dir: C:\Users\zhshc\Desktop\gituptest
+  - dir: C:\Users\zhshc\Desktop\gitup-test
     branch: origin/master
-    mode: ontime
+    mode: webhook
     time: "0 0 */1 * *"
