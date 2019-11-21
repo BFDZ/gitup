@@ -26,7 +26,7 @@ repo:
   - dir: /bulabula1  # 仓库本地地址
     branch: origin/master
     mode: ontime # 触发模式 ontime:根据time的配置轮训。适用于不暴露在公网的情景。
-    time: "0 0 */1 * *"
+    time: "0 0 */1 * *" # 配置方法参考 https://github.com/robfig/cron
 
   - dir: /bulabula2
     branch: origin/master
